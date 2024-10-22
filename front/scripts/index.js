@@ -18,5 +18,20 @@ function jsToHtmlCards(objetoJs){
     return div
 }
 
-const arrayHtml = tempData.map(jsToHtmlCards)
-arrayHtml.forEach( elementoHtml => container.appendChild(elementoHtml));
+function moviesDataDone(moviesData){
+	const arrayHtml = moviesData.map(jsToHtmlCards)
+	arrayHtml.forEach( (elementoHtml) => container.appendChild(elementoHtml));
+}
+
+function moviesDataFail(){
+		alert("la busqueda no arrojo ningun resultado, se utilizara informacion fake")
+		const arrayHtml = tempData.map(jsToHtmlCards)
+		arrayHtml.forEach( (elementoHtml) => container.appendChild(elementoHtml));
+}
+
+$.get("https://students-api.up.railway.app/movies")
+	.done(moviesDataDone)
+	.fail(moviesDataFail)
+
+
+
