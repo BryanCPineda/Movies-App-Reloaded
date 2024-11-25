@@ -1,10 +1,10 @@
+const { formJs } = require("./form.js")
 const { moviesDataDone } = require("./moviesDataDone.js")
 const { moviesDataFail } = require("./moviesDataFail.js")
 const axios = require("axios")
 
 
 const fetchData = async () => {
-
   try {
     const { data } = await axios.get("http://localhost:3000/movies")
     moviesDataDone(data.data)
@@ -14,9 +14,16 @@ const fetchData = async () => {
   
 }
 
-fetchData()
+if(location.pathname.includes("/index")){
+    fetchData()
+} else if(location.pathname.includes("/form")){
+    formJs()
+}
 
-// axios.get("https://students-api.up.railway.app/movies")
-// 	.then((respuesta) => moviesDataDone(respuesta.data))
-// 	.catch(moviesDataFail)
+
+
+
+
+
+
 
