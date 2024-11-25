@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" href="./styles/form.css">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <img
+      src="./assets/img/logo.PNG"
+      alt="logo camilo pineda"
+      id="logoCamiloPineda"
+    />
+    <nav>
+      <ul>
+        <li><a href="./index.html"> Home </a></li>
+        <li><a href="./movies.html"> Movies </a></li>
+        <li><a href="./about.html"> About Us </a></li>
+        <li><a href="./lastestNews.html"> Lastest news </a></li>
+        <li><a href="./form.html"> Create Movie </a></li>
+      </ul>
+    </nav>
+    <img
+      src="./assets/img/user-login.png"
+      alt="imagen de login"
+      id="iconLogin"
+    />
+  </header>
+    
+  <main>
+      <section>
+        <form>
+            <div>
+              <label> TITLE </label>
+              <input type="text" required name="title">
+            </div>
+            <div>
+              <label> YEAR </label>
+              <input type="number" required min="1800" max="2024" name="year">
+            </div>
+            <div>
+              <label> DIRECTOR </label>
+              <input type="text" required name="director">
+            </div>
+            <div class="duration-container">
+              <label>DURATION</label>
+                <input type="number" required min="0" max="4" name="durationh">
+                <span>H</span>
+                <input type="number" required min="0" max="60" name="durationm">
+                <span>M</span>
+            </div>
+            <div>
+              <label> GENRES </label>
+              <span> Comedia </span>
+              <input type="checkbox" value="comedia" name="genres">
+              <span> Drama </span>
+              <input type="checkbox" value="drama" name="genres">
+              <span> Aventura </span>
+              <input type="checkbox" value="aventura" name="genres">
+              <span> Ficcion </span>
+              <input type="checkbox" value="ficcion" name="genres">
+            </div>
+            <div>
+              <label> RATE </label>
+              <input type="number" required min="0" max="5" name="rate">
+            </div>
+            <div>
+              <label> POSTER </label>
+              <input type="url" name="poster">
+            </div>
+            <div>
+              <input type="submit" value="SUBMIT">
+            </div>
+        </form>
+        <button id="reset"> RESET </button>
+      </section>
+  </main>
+</body>
+<script src="./public/bundle.js"></script>
+</html>
