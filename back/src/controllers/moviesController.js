@@ -37,12 +37,18 @@ const getMovieIdController = async (req, res) => {
   }
 };
 
-const createMovieController = (req, res) => {
-  const response = createdMovieService(req.body);
-  res.status(201).json({
-    message: "pelicula creada con exito",
-    data: response,
-  });
+const createMovieController = async (req, res) => {
+  try {
+    const response = await createdMovieService(req.body);
+    res.status(201).json({
+      message: "pelicula creada con exito",
+      data: response,
+    });
+  } catch (error) {
+    res.status(400).json({
+      message: error.message,
+    });
+  }
 };
 
 module.exports = {

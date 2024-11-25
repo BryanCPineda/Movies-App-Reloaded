@@ -9,8 +9,8 @@ const getMovieById = async (id) => {
 }
 
 
-const createdMovieService = (info) => {
-  
+const createdMovieService = async (info) => {
+  return await Movie.create(info)
 }
 
 module.exports = {
